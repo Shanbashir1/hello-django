@@ -1,4 +1,3 @@
-import dj_database_url
 """
 Django settings for django_todo project.
 
@@ -11,6 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
+if os.path.isfile("env.py"):
+    import env
+
+import dj_database_url
 from pathlib import Path
 
 
@@ -27,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-1nb@2l4c$oc70sjnd-x@n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME)]
+ALLOWED_HOSTS = [os.environ.get('bismillah786-django-todo-app.herokuapp.com')]
 
 
 # Application definition
